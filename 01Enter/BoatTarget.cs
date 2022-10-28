@@ -7,7 +7,7 @@ using VRC.Udon;
 public class BoatTarget : UdonSharpBehaviour
 {
     public GameObject boat;
-    public GameObject wisp;
+    public GameObject Orb;
     public Animator boatAnim;
     public GameObject boatChair;
 
@@ -22,7 +22,7 @@ public class BoatTarget : UdonSharpBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.name == "_Boat"){
-            wisp.SetActive(true);
+            Orb.SetActive(true);
             boatAnim.enabled = false;
             boatChair.SetActive(false);
             gameObject.SetActive(false);
