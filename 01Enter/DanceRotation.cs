@@ -7,6 +7,7 @@ using VRC.Udon;
 public class DanceRotation : UdonSharpBehaviour
 {
     public float speed;
+    public float stopDurationTime;
     void Start()
     {
 
@@ -18,6 +19,9 @@ public class DanceRotation : UdonSharpBehaviour
     }
 
     public void Stop(){
-        speed =0;
+        
+        while(speed >= 0){
+            speed -= stopDurationTime;
+        }
     }
 }

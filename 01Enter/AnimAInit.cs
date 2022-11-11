@@ -25,10 +25,11 @@ public class AnimAInit : UdonSharpBehaviour
     public Animator dollH;
 
     public GameObject stopObj;
-   UdonBehaviour stop;
+    UdonBehaviour stop;
     void Start()
     {
-        if(stopObj != null){
+        if (stopObj != null)
+        {
 
             stop = (UdonBehaviour)stopObj.GetComponent(typeof(UdonBehaviour));
         }
@@ -39,13 +40,21 @@ public class AnimAInit : UdonSharpBehaviour
         if (other.gameObject.name == "_Boat")
         {
 
-            if(stopObj != null){
+            if (stopObj != null)
+            {
                 stop.SendCustomEvent("Stop");
             }
 
             if (doll != null)
             {
-                doll.SetActive(true);
+                if (doll.activeInHierarchy == true)
+                {
+                    doll.SetActive(false);
+                }
+                else
+                {
+                    doll.SetActive(true);
+                }
             }
 
             if (triggerObjA != null)

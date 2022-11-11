@@ -17,6 +17,7 @@ public class NarRemoveObj : UdonSharpBehaviour
         
         if (other.gameObject.name == "_Boat"){
             obj.SetActive(false);
+            gameObject.SetActive(false);
         }
 
     }

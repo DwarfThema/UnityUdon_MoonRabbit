@@ -19,8 +19,8 @@ public class BoatWihtPlayer : UdonSharpBehaviour
         player.TeleportTo(transform.position, player.GetRotation());
 
         //Debug.Log(player.GetRotation());
-        if(Vector3.Distance(orientation.transform.position, transform.position) <= 0){
-            
+        if(Vector3.Distance(orientation.transform.position, transform.position) <= 0)
+        {
             player.TeleportTo(transform.position, new Quaternion(0.5f,0.5f,0.5f,0.5f) );
         }
 
